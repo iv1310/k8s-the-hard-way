@@ -154,3 +154,12 @@ resource "ansible_host" "vm03"{
     ansible_user = "ubuntu"
   }
 }
+output "vm01_public_ip"{
+  value = "${google_compute_address.net_vm01.address}"
+}
+output "vm02_public_ip"{
+  value = "${google_compute_address.net_vm02.address}"
+}
+output "vm03_public_ip"{
+  value = "${google_compute_address.net_vm03.address}"
+}
