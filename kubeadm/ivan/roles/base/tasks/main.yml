@@ -1,0 +1,9 @@
+---
+- include_tasks: basic.yml
+  tags: basic
+
+- include_tasks: ulimit.yml
+  tags: ulimit
+
+#- include_tasks: ntp.yml
+#  tags: ntp

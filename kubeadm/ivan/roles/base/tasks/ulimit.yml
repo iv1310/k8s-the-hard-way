@@ -1,0 +1,12 @@
+- name: Set nofile to 65535
+  lineinfile:
+    line: "{{ item }}"
+    dest: /etc/security/limits.conf
+  with_items:
+    - "* soft nofile 65535"
+    - "* hard nofile 65535"
+
+- name: Update login pam
+  lineinfile:
+    line: session required pam_limits.so
+    dest: /etc/pam.d/login

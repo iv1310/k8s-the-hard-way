@@ -1,0 +1,16 @@
+---
+- name: Make sure ntp installed
+  apt:
+    name: ntp
+    state: present
+    update_cache: yes
+
+- name: Make sure ntp running
+  service:
+    name: ntp
+    state: started
+    enabled: yes
+
+- name: Set timezone to UTC
+  timezone:
+    name: UTC

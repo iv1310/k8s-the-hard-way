@@ -1,0 +1,43 @@
+---
+- name: Update package
+  apt:
+    update_cache: yes
+ 
+- name: Set locale to en_us.utf8
+  lineinfile:
+    dest: /etc/environment
+    line: "{{ item }}"
+  with_items:
+    - LC_ALL=en_US.utf8
+    - LC_CTYPE=en_US.utf8
+
+- name: Make sure basic packages installed
+  apt:
+    pkg:
+    - vim
+    - tmux
+    - bash-completion
+    - git
+    - apt-transport-https
+    - curl
+
+- name: Install tmux configuration
+  copy:
+    src: tmux.conf
+    dest: /etc/tmux.conf
+
+- name: Copy vim configuration file
+  copy:
+    src: vimrc
+    dest: ~/.vimrc
+  become_user: ubuntu
+  tags: vim
+
+- name: Activate bash search from history
+  lineinfile:
+    dest: /etc/inputrc
+    line: "{{ item }}"
+  with_items:
+    - '"\e[A": history-search-backward'
+    - '"\e[B": history-search-forward'
+  tags: autocomplete

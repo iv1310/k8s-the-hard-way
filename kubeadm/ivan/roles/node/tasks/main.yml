@@ -1,0 +1,7 @@
+---
+# tasks file for {node}
+- name: Worker join to the cluser
+  shell:
+    cmd: "{{ hostvars[groups['k8s-master'][0]].join_command }} >> node_joined.txt"
+    chdir: /home/ubuntu/
+    creates: node_joined.txt
