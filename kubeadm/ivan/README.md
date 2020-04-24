@@ -34,3 +34,7 @@
 > `$ chmod +x ./run-playbook.sh`
 * Selanjutkan jalankan script.
 > `$ ./run-playbook.sh`
+* Setelah script selesai dan berhasil. Silahkan cek ke dalam server yang memiliki role _master_.
+> `$ ssh ubuntu@IP_Master`
+* Kemudian silahkan cek nodes-nodes yang telah berhasil bergabung dengan cluster.
+> `$ sudo kubectl get nodes`
