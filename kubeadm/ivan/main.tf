@@ -10,7 +10,7 @@ variable "ssh_user"{
   default="ubuntu"
 }
 variable "ssh_pub_key_file"{
-  default="ivan.pub"
+  default="id_rsa.pub"
 }
 data "google_compute_image" "my_image"{
   family="ubuntu-1604-lts"
