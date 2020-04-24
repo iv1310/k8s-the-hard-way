@@ -37,4 +37,5 @@
 * Setelah script selesai dan berhasil. Silahkan cek ke dalam server yang memiliki role _master_.
 > `$ ssh ubuntu@IP_Master`
 * Kemudian silahkan cek nodes-nodes yang telah berhasil bergabung dengan cluster.
-> `$ sudo kubectl get nodes`
+> `$ sudo kubectl get nodes`  
+![alt text](https://github.com/iv1310/k8s-the-hard-way/blob/master/kubeadm/ivan/img/cluster_nodes.png "Cluster Nodes")
