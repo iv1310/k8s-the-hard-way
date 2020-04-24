@@ -22,7 +22,7 @@
 > `$ cd /tmp && git clone https://github.com/iv1310/k8s-the-hard-way && cd k8s-the-hard-way/kubeadm/ivan`
 * Kemudian pastikan sudah memiliki kredensial untuk mengakses GCP dan file public key yang akan digunakan untuk mengakses server menggunakan SSH.   
 > `$ cat creds.json && cat id_rsa.pub`   
-* Kemudian lakukan inisiasi terhadap terraform, sehingga terraform akan mendownload plugin-plugin yang diperlukan.
+* Kemudian lakukan inisiasi terhadap proyek menggunakan terraform, sehingga terraform akan mendownload plugin-plugin yang diperlukan.
 > `$ terraform init .`
 * Kemudian sebelum melakukan provisioning ataupun instalasi service-service pada google cloud platform, biasakan untuk memastikan apakah setiap service sudah benar.
 > `$ terraform plan`
@@ -30,4 +30,7 @@
 > `$ terraform apply`
 * Proses instalasi akan membutuhkan sedikit waktu, kemudian setelah selesai, kita akan melihat outputnya berubah ip public dari server-server yang telah terinstal.
 > `$ terraform output`
-* 
+* Kemudian setelah server telah terinstal dan dapat digunakan, tahapan selanjutnya adalah melakukan manajemen konfigurasi untuk menginstall semua dependensi kubeadm, dan menginstal kubernetes cluster menggunakan ansible. Terlebih dahulu set permission.
+> `$ chmod +x ./run-playbook.sh`
+* Selanjutkan jalankan script.
+> `$ ./run-playbook.sh`
