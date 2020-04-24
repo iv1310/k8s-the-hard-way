@@ -20,7 +20,7 @@
 #### Step by step:
 * Pertama sekali clone terlebih dahulu repositori.   
 > `$ cd /tmp && git clone https://github.com/iv1310/k8s-the-hard-way && cd k8s-the-hard-way/kubeadm/ivan`
-* Kemudian pastikan sudah memiliki kredensial untuk mengakses GCP dan file public key yang akan digunakan untuk mengakses server menggunakan SSH.   
+* Kemudian pastikan sudah memiliki kredensial untuk mengakses GCP dan file public key yang akan digunakan untuk mengakses server menggunakan SSH melalui perangkat lokal.   
 > `$ cat creds.json && cat id_rsa.pub`   
 * Kemudian lakukan inisiasi terhadap proyek menggunakan terraform, sehingga terraform akan mendownload plugin-plugin yang diperlukan.
 > `$ terraform init .`
