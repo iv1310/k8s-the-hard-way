@@ -1,1 +1,1 @@
-<div style="text-align:center"><a href="https://kubernetes.io"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/440px-Kubernetes_logo_without_workmark.svg.png" title="kubernetes" alt="kubernetes"></a></div>
+<p align="center"><a href="https://kubernetes.io"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/440px-Kubernetes_logo_without_workmark.svg.png" title="kubernetes" alt="kubernetes"></a></p>
