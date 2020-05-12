@@ -3,18 +3,20 @@
   roles:
     - role: base
       tag: base
-    - role: k8s-base
-      tag: k8s-base
-- hosts: k8s-master
-  become: true
-  gather_facts: false
-  vars:
-    network_cidr: 192.168.0.0/16
-  roles:
-    - role: master
-      tag: master
-- hosts: k8s-node
-  become: true
-  roles:
-    - role: node
-      tag: node
+    - role: newuser
+      tag: newuser
+#    - role: k8s-base
+#      tag: k8s-base
+#- hosts: k8s-master
+#  become: true
+#  gather_facts: false
+#  vars:
+#    network_cidr: 192.168.0.0/16
+#  roles:
+#    - role: master
+#      tag: master
+#- hosts: k8s-node
+#  become: true
+#  roles:
+#    - role: node
+#      tag: node

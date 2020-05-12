@@ -25,6 +25,15 @@ resource "google_compute_address" "net_vm02"{
 resource "google_compute_address" "net_vm03"{
   name="ipv4-address-vm03"
 }
+resource "google_compute_address" "net_vm04"{
+  name="ipv4-address-vm04"
+}
+resource "google_compute_address" "net_vm05"{
+  name="ipv4-address-vm05"
+}
+resource "google_compute_address" "net_vm06"{
+  name="ipv4-address-vm06"
+}
 resource "google_compute_firewall" "http_rule"{
   name="allow-http"
   source_ranges=["0.0.0.0/0"]
@@ -66,7 +75,7 @@ resource "google_compute_network" "vpc-gcp"{
   name="vpc-gcp"
 }
 resource "google_compute_instance" "vm01"{
-  name="k8s-master"
+  name="vm01"
   machine_type="n1-standard-2"
   zone="asia-southeast1-a"
   tags=["foo","bar"]
@@ -91,7 +100,7 @@ resource "google_compute_instance" "vm01"{
   }
 }
 resource "google_compute_instance" "vm02"{
-  name="k8s-node01"
+  name="vm02"
   machine_type="n1-standard-2"
   zone="asia-southeast1-a"
   boot_disk{
@@ -113,7 +122,7 @@ resource "google_compute_instance" "vm02"{
   metadata_startup_script="echo hi > /test.txt"
 }
 resource "google_compute_instance" "vm03"{
-  name="k8s-node02"
+  name="vm03"
   machine_type="n1-standard-2"
   zone="asia-southeast1-a"
   boot_disk{
@@ -133,23 +142,107 @@ resource "google_compute_instance" "vm03"{
     ssh-keys="${var.ssh_user}:${file(var.ssh_pub_key_file)}"
   }
 }
+resource "google_compute_instance" "vm04"{
+  name="vm04"
+  machine_type="n1-standard-2"
+  zone="asia-southeast1-a"
+  boot_disk{
+    initialize_params{
+      image="${data.google_compute_image.my_image.self_link}"
+      size="20"
+    }
+    auto_delete="true"
+  }
+  network_interface{
+    network="${google_compute_network.vpc-gcp.name}"
+    access_config{
+      nat_ip="${google_compute_address.net_vm04.address}"
+    }
+  }
+  metadata={
+    ssh-keys="${var.ssh_user}:${file(var.ssh_pub_key_file)}"
+  }
+}
+resource "google_compute_instance" "vm05"{
+  name="vm05"
+  machine_type="n1-standard-2"
+  zone="asia-southeast1-a"
+  boot_disk{
+    initialize_params{
+      image="${data.google_compute_image.my_image.self_link}"
+      size="20"
+    }
+    auto_delete="true"
+  }
+  network_interface{
+    network="${google_compute_network.vpc-gcp.name}"
+    access_config{
+      nat_ip="${google_compute_address.net_vm05.address}"
+    }
+  }
+  metadata={
+    ssh-keys="${var.ssh_user}:${file(var.ssh_pub_key_file)}"
+  }
+}
+resource "google_compute_instance" "vm06"{
+  name="vm06"
+  machine_type="n1-standard-2"
+  zone="asia-southeast1-a"
+  boot_disk{
+    initialize_params{
+      image="${data.google_compute_image.my_image.self_link}"
+      size="20"
+    }
+    auto_delete="true"
+  }
+  network_interface{
+    network="${google_compute_network.vpc-gcp.name}"
+    access_config{
+      nat_ip="${google_compute_address.net_vm06.address}"
+    }
+  }
+  metadata={
+    ssh-keys="${var.ssh_user}:${file(var.ssh_pub_key_file)}"
+  }
+}
 resource "ansible_host" "vm01"{
   inventory_hostname = "${google_compute_address.net_vm01.address}"
-  groups = ["k8s-master"]
+  groups = ["vm"]
   vars = {
     ansible_user = "ubuntu"
   }
 }
 resource "ansible_host" "vm02"{
   inventory_hostname = "${google_compute_address.net_vm02.address}"
-  groups = ["k8s-node"]
+  groups = ["vm"]
   vars = {
     ansible_user = "ubuntu"
   }
 }
 resource "ansible_host" "vm03"{
   inventory_hostname = "${google_compute_address.net_vm03.address}"
-  groups = ["k8s-node"]
+  groups = ["vm"]
+  vars = {
+    ansible_user = "ubuntu"
+  }
+}
+resource "ansible_host" "vm04"{
+  inventory_hostname = "${google_compute_address.net_vm04.address}"
+  groups = ["vm"]
+  vars = {
+    ansible_user = "ubuntu"
+  }
+}
+resource "ansible_host" "vm05"{
+  inventory_hostname = "${google_compute_address.net_vm05.address}"
+  groups = ["vm"]
+  vars = {
+    ansible_user = "ubuntu"
+  }
+}
+resource "ansible_host" "vm06"{
+  inventory_hostname = "${google_compute_address.net_vm06.address}"
+  groups = ["vm"]
   vars = {
     ansible_user = "ubuntu"
   }
@@ -162,4 +255,13 @@ output "vm02_public_ip"{
 }
 output "vm03_public_ip"{
   value = "${google_compute_address.net_vm03.address}"
+}
+output "vm04_public_ip"{
+  value = "${google_compute_address.net_vm04.address}"
+}
+output "vm05_public_ip"{
+  value = "${google_compute_address.net_vm05.address}"
+}
+output "vm06_public_ip"{
+  value = "${google_compute_address.net_vm06.address}"
 }

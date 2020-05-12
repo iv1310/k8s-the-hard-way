@@ -1,0 +1,22 @@
+---
+# tasks file for newuser
+- name: Create new user
+  user:
+    name: user01
+    shell: /bin/bash
+    groups: google-sudoers
+    append: yes
+- name: Create ssh directory
+  file:
+    path: /home/user01/.ssh
+    owner: user01
+    group: user01
+    state: directory
+    mode: '0755'
+- name: Touch authorized_keys file
+  file:
+    path: /home/user01/.ssh/authorized_keys
+    owner: user01
+    group: user01
+    state: touch
+    mode: '0640'
