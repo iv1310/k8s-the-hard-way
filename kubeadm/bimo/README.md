@@ -1,5 +1,3 @@
-<p align="center"><a href="https://kubernetes.io"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/440px-Kubernetes_logo_without_workmark.svg.png" title="kubernetes" alt="kubernetes"></a></p>
-
 <a name="kubernetes"></a>
 # Kubernetes
 *is an open-source system for automating deployment, scaling, and management of containerized applications.*
@@ -25,7 +23,7 @@ The **[recommended](https://docs.kublr.com/installation/hardware-recommendation/
 > | Master Node | 2 GB | 1.5 | Kublr-Kubernetes master components (k8s-core, cert-updater, fluentd, kube-addon-manager, rescheduler, network, etcd, proxy, kubelet) |
 > | Worker Node | 700 mB | 0.5 | Kublr-Kubernetes worker components (fluentd, dns, proxy, network, kubelet) |
 > | Centralized Monitoring Agent* | 2 GB | 0.7 | Prometheus. We recommend limit 2GB for typical installation of managed cluster which has 8 working, 40 pods per node with total 320 nodes. Retention period for prometheus agent is 1 hour. |
-**\*IF NEEDED**
+*\*IF NEEDED*
 
 ### Docker
 <p align="center"><img src="https://www.shadowandy.net/wp/wp-content/uploads/docker.png"></p>
