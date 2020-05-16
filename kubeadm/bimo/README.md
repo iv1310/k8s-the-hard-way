@@ -10,7 +10,7 @@
 * [Usage](#usage)
 * [Requirement](#requirement)
 * [Installation](#installation)
-* [Single Node Cluster](#single node cluster)
+* [Kubernetes Cluster](#kubernetesCluster)
 * [Conclusion](#conclusion)
 
 ## Usage
@@ -19,7 +19,7 @@
 
 ## Installation
 
-## Single Node Cluster
+## Kubernetes Cluster
 <p align="center"><img src="https://d33wubrfki0l68.cloudfront.net/99d9808dcbf2880a996ed50d308a186b5900cec9/40b94/docs/tutorials/kubernetes-basics/public/images/module_01_cluster.svg" title="cluster" alt="cluster"></p>
 
 ### Master
