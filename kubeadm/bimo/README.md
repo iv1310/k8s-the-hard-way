@@ -19,7 +19,7 @@
 
 <a name="requirement"></a>
 ## Requirement
-The **recommended(https://docs.kublr.com/installation/hardware-recommendation/)** kubernetes cluster hardware requirements is :
+The **[recommended](https://docs.kublr.com/installation/hardware-recommendation/)** kubernetes cluster hardware requirements is :
 > | Role | Minimum memory | Minimum CPU Cores | Components |
 > | --- | --- | --- | --- |
 > | Master Node | 2 GB | 1.5 | Kublr-Kubernetes master components (k8s-core, cert-updater, fluentd, kube-addon-manager, rescheduler, network, etcd, proxy, kubelet) |
