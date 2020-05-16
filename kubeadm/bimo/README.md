@@ -11,6 +11,7 @@
 * [Requirement](#requirement)
 * [Installation](#installation)
 * [Kubernetes Cluster](#kubernetesCluster)
+* [Prometheus](#prometheus)
 * [Conclusion](#conclusion)
 
 <a name="usage"></a>
@@ -29,6 +30,10 @@
 ### Master
 
 ### Worker
+
+<a name="prometheus"></a>
+## Prometheus
+<p align="center"><<img src="https://steiniche.net/wp-content/uploads/2018/03/prometheus_logo.png"></p>
 
 <a name="conclusion"></a>
 ## Conclusion
