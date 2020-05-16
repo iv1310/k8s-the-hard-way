@@ -20,12 +20,11 @@
 <a name="requirement"></a>
 ## Requirement
 The **[recommended](https://docs.kublr.com/installation/hardware-recommendation/)** kubernetes cluster hardware requirements is :
-| Role | Minimum memory | Minimum CPU Cores | Components |
+> | Role | Minimum memory | Minimum CPU Cores | Components |
 | --- | --- | --- | --- |
 | Master Node | 2 GB | 1.5 | Kublr-Kubernetes master components (k8s-core, cert-updater, fluentd, kube-addon-manager, rescheduler, network, etcd, proxy, kubelet) |
 | Worker Node | 700 mB | 0.5 | Kublr-Kubernetes worker components (fluentd, dns, proxy, network, kubelet) |
 | Centralized Monitoring Agent* | 2 GB | 0.7 | Prometheus. We recommend limit 2GB for typical installation of managed cluster which has 8 working, 40 pods per node with total 320 nodes. Retention period for prometheus agent is 1 hour. |
-
 **\*IF NEEDED**
 
 ### Docker
