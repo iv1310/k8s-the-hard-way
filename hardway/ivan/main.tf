@@ -161,7 +161,7 @@ resource "google_compute_instance" "worker-01"{
   }
   metadata={
     ssh-keys="${var.ssh_user}:${file(var.ssh_pub_key_file)}"
-    pod-cidr="10.200.2.21"
+    pod-cidr="10.200.2.0/24"
   }
 }
 resource "google_compute_instance" "worker-02"{
@@ -183,7 +183,7 @@ resource "google_compute_instance" "worker-02"{
   }
   metadata={
     ssh-keys="${var.ssh_user}:${file(var.ssh_pub_key_file)}"
-    pod-cidr="10.200.2.22"
+    pod-cidr="10.200.3.0/24"
   }
 }
 resource "google_compute_instance" "worker-03"{
@@ -205,7 +205,7 @@ resource "google_compute_instance" "worker-03"{
   }
   metadata={
     ssh-keys="${var.ssh_user}:${file(var.ssh_pub_key_file)}"
-    pod-cidr="10.200.2.23"
+    pod-cidr="10.200.4.0/24"
   }
 }
 resource "ansible_host" "vm01"{

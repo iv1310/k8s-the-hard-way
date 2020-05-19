@@ -1,0 +1,16 @@
+{
+  "CN": "system:node:worker-03",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "Indonesia",
+      "L": "Jakarta",
+      "O": "system:nodes",
+      "OU": "Kubernetes The Hard Way",
+      "ST": "West Jakarta"
+    }
+  ]
+}
